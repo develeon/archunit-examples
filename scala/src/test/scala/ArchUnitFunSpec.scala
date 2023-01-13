@@ -1,21 +1,21 @@
 import com.tngtech.archunit.core.domain.JavaClasses
 import com.tngtech.archunit.core.importer.ClassFileImporter
 import com.tngtech.archunit.lang.ArchRule
-import org.scalatest.funspec.AnyFunSpec
+import org.specs2.matcher.Scope
+import org.specs2.mutable.Specification
 
-import scala.collection.JavaConverters.*
+abstract class ArchUnitFunSpec(name: String, packages: String, rules: ArchRule*)
+    extends Specification {
 
-abstract class ArchUnitFunSpec(private val name: String,
-                               private val packages: String = "..*..",
-                               private val rules: ArchRule*
-                               ) extends AnyFunSpec {
-  describe(name) {
-    val classes = new ClassFileImporter().importPackages(packages)
+  lazy val classes: JavaClasses =
+    new ClassFileImporter().importPackages(packages)
+  //
+  //  class BaseModel extends Scope {
+  //  }
 
-    rules.foreach { rule =>
-      it(rule.getDescription) {
-        rule.check(classes)
-      }
+  rules foreach { rule =>
+    rule.getDescription in new Scope {
+      rule.check(classes)
     }
   }
 }

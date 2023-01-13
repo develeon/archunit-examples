@@ -1,5 +1,3 @@
 package examples.service
 
-class ServiceWithMalformedName {
-
-}
+class ServiceWithMalformedName {}

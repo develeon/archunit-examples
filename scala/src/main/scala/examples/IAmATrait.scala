@@ -1,5 +1,3 @@
 package examples
 
-trait IAmATrait {
-
-}
+trait IAmATrait {}

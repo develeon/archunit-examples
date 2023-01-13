@@ -5,6 +5,4 @@ import layered.repository.SuperHeroRepository
 
 import scala.util.Try
 
-class SuperHeroService(private val repository: SuperHeroRepository) {
-
-}
+class SuperHeroService(private val repository: SuperHeroRepository) {}

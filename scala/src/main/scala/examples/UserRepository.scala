@@ -1,5 +1,3 @@
 package examples
 
-class UserRepository {
-
-}
+class UserRepository {}
