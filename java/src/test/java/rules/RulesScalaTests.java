@@ -25,7 +25,7 @@ import static com.tngtech.archunit.library.dependencies.SlicesRuleDefinition.sli
 
 // Check documentation here : https://www.archunit.org/userguide/html/000_Index.html
 @AnalyzeClasses(packages = "rules", importOptions = ImportOption.DoNotIncludeTests.class)
-public class Rules {
+public class RulesScalaTests {
     @ArchTest
     public static final ArchRule cycles = ensureNoCycle("com.sample");
 
