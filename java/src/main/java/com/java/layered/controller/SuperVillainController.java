@@ -4,5 +4,14 @@ import com.java.layered.repository.SuperVillainRepository;
 import com.java.layered.service.SuperVillainService;
 
 public class SuperVillainController {
-    SuperVillainController(SuperVillainService service, SuperVillainRepository repository) {}
+    final SuperVillainService service;
+    final SuperVillainRepository repository;
+    SuperVillainController(SuperVillainService service, SuperVillainRepository repository) {
+        this.service = service;
+        this.repository = repository;
+    }
+
+    public SuperVillainService service() {return service;}
+
+    public SuperVillainRepository repository() {return repository;}
 }
