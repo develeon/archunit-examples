@@ -10,7 +10,7 @@ val versions = new {
 val testDependencies = List(
   "org.specs2"          %% "specs2-core" % versions.specs2   % "it,test",
   "com.tngtech.archunit" % "archunit"    % versions.archUnit % "it, test",
-//    "org.mockito"         %% "mockito-scala" % "1.17.12"         % Test,
+  "com.tngtech.archunit" % "archunit-junit5"    % versions.archUnit % "it, test",
 )
 
 val cats = List(
